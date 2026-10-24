@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060608">
+<title>Reflections — A Study in Being Watched</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23060608'/%3E%3Cpath d='M8 9h4l4 14 4-14h4l-6 16h-4z' fill='%23c8a66b'/%3E%3C/svg%3E">
+<link rel="preload" href="./vendor/fonts/italiana.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./vendor/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./vendor/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="stage" aria-label="Reflections, a three-dimensional mirror salon">
+  <canvas id="scene"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="focus-veil" aria-hidden="true"></div>
+</main>
+
+<div id="hud" aria-hidden="false">
+  <div class="top">
+    <div class="brand" id="brand">
+      <span class="brand-mark">VII</span>
+      <span class="brand-rule"></span>
+      <span class="brand-name">Reflections</span>
+    </div>
+    <div class="top-actions">
+      <button class="chip" id="sound" type="button" aria-label="Toggle sound">Sound off</button>
+      <button class="chip record" id="film" type="button" aria-label="Record a short film"><span class="dot"></span>Film</button>
+    </div>
+  </div>
+
+  <nav class="reflect-nav" id="reflectNav" aria-label="Reflections">
+    <button type="button" data-index="0" aria-label="Reflection one">I</button>
+    <button type="button" data-index="1" aria-label="Reflection two">II</button>
+    <button type="button" data-index="2" aria-label="Reflection three">III</button>
+    <button type="button" data-index="3" aria-label="Reflection four">IV</button>
+    <button type="button" data-index="4" aria-label="Reflection five">V</button>
+    <button type="button" data-index="5" aria-label="Reflection six">VI</button>
+    <button type="button" data-index="6" aria-label="Reflection seven">VII</button>
+  </nav>
+
+  <div class="bottom">
+    <div class="caption" id="caption">
+      <div class="cap-meta"><span class="cap-num" id="capNum">IV</span><span class="cap-slash">/</span><span class="cap-total">VII</span><span class="cap-label">Reflection</span></div>
+      <p class="cap-line" id="capLine">This is the one looking at you.</p>
+    </div>
+    <div class="hint" id="hint">Drag to shift the room <span>·</span> Tap a mirror to hold her gaze</div>
+    <div class="footer-mark" aria-hidden="true"><span></span>A SLOW STUDY IN BEING WATCHED<span></span></div>
+  </div>
+</div>
+
+<div class="intro" id="intro">
+  <div class="intro-glow" aria-hidden="true"></div>
+  <div class="intro-inner">
+    <div class="eyebrow"><span></span>An elegant study in being watched<span></span></div>
+    <h1>Reflections</h1>
+    <p class="intro-sub">Seven angles. One held breath.</p>
+    <button class="start" id="start" type="button">Start</button>
+    <p class="intro-note">Sound on · Phone &amp; tablet</p>
+  </div>
+</div>
+
+<div class="rec" id="rec" aria-hidden="true"><span class="rec-dot"></span><span id="recTime">00:00</span><span class="rec-label">Recording film</span></div>
+<div class="toast" id="toast" role="status"></div>
+
+<audio id="silence" loop preload="none" aria-hidden="true"></audio>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
